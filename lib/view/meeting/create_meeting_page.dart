@@ -60,6 +60,7 @@ class _CreateMeetingScreenState extends State<CreateMeetingScreen> {
                   duration: _duration,
                   attendees: _attendees,
                   agenda: _agendaController.text,
+                  id: '',
                 );
                 // TODO: Save the meeting to the database or send it to the server.
                 // Navigator.pop(context, meeting);

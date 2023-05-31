@@ -77,6 +77,7 @@ class Users {
       duration: 60,
       attendees: ['John Doe', 'Jane Smith', 'Bob Johnson'],
       agenda: 'Review progress and plan next steps',
+      id: '',
     ),
     Meeting(
       title: 'Sales team meeting',
@@ -84,6 +85,7 @@ class Users {
       duration: 30,
       attendees: ['Alice Brown', 'Charlie Davis', 'Eve Green'],
       agenda: 'Discuss new leads and sales targets',
+      id: '',
     ),
     Meeting(
       title: 'Design review meeting',
@@ -91,6 +93,7 @@ class Users {
       duration: 90,
       attendees: ['Mike Lee', 'Sara Kim', 'Tom Chen'],
       agenda: 'Evaluate design proposals and provide feedback',
+      id: '',
     ),
   ];
 }

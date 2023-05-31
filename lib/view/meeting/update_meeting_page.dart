@@ -36,10 +36,6 @@ class _UpdateMeetingScreenState extends State<UpdateMeetingScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.delete),
@@ -57,6 +53,7 @@ class _UpdateMeetingScreenState extends State<UpdateMeetingScreen> {
                 duration: _duration,
                 attendees: _attendees,
                 agenda: _agendaController.text,
+                id: '',
               );
               // TODO: Add logic to update the meeting in the database or server.
               Navigator.pop(context, meeting);

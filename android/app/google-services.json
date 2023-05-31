@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "348014455063",
+    "project_id": "fathi-youtube",
+    "storage_bucket": "fathi-youtube.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348014455063:android:a458af826eb3caff36af52",
+        "android_client_info": {
+          "package_name": "com.example.quran_lang_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu80LVkMhOh5qg-zX7gbHE0vbDlqMr3mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
