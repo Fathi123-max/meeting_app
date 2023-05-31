@@ -4,9 +4,8 @@ import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_not
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../constatnts/const.dart';
-import '../home/home_page.dart';
 import '../meeting/meetings_view_page.dart';
+import '../user/users_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -23,6 +22,12 @@ class _MyHomePageState extends State<MyHomePage> {
   final _controller = NotchBottomBarController(index: 0);
 
   int maxCount = 5;
+  @override
+  void initState() async {
+    // TODO: implement initState
+
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -32,9 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   /// widget list
   final List<Widget> bottomBarPages = [
-    MeetingsScreen(
-      meetings: Users.meetingsList,
-    ),
+    MeetingsScreen(),
     Container(),
     UsersList(),
   ];

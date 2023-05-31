@@ -1,10 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 import '../model/meeting_model.dart';
 
 class MeetingController extends GetxController {
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final RxList<Meeting> _meeting = <Meeting>[].obs;
+  RxList<Meeting> get meetings => _meeting;
+  @override
+  void onInit() {
+    getAllMeetings();
+    super.onInit();
+  }
 
   Future<void> addMeeting(Meeting meeting) async {
     final Map<String, dynamic> meetingData = meeting.toMap();

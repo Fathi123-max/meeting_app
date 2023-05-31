@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import '../../controller/firbase_meeting_controller.dart';
 import '../../model/meeting_model.dart';
 
 class UpdateMeetingScreen extends StatefulWidget {
@@ -19,6 +21,8 @@ class _UpdateMeetingScreenState extends State<UpdateMeetingScreen> {
   late DateTime _dateTime;
   late int _duration;
   late List<String> _attendees;
+  final MeetingController meetingService =
+      Get.put<MeetingController>(MeetingController());
 
   @override
   void initState() {
@@ -39,8 +43,10 @@ class _UpdateMeetingScreenState extends State<UpdateMeetingScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.delete),
-            onPressed: () {
+            onPressed: () async {
               // TODO: Add logic to delete the meeting from the database or server.
+              await meetingService.deleteMeeting(_dateTime.toString());
+              setState(() {});
               Navigator.pop(context);
             },
           ),
@@ -53,7 +59,7 @@ class _UpdateMeetingScreenState extends State<UpdateMeetingScreen> {
                 duration: _duration,
                 attendees: _attendees,
                 agenda: _agendaController.text,
-                id: '',
+                id: _dateTime.toString(),
               );
               // TODO: Add logic to update the meeting in the database or server.
               Navigator.pop(context, meeting);
@@ -135,24 +141,24 @@ class _UpdateMeetingScreenState extends State<UpdateMeetingScreen> {
                 labelText: 'Duration',
                 border: OutlineInputBorder(),
               ),
-              items: [
-                const DropdownMenuItem<int>(
+              items: const [
+                DropdownMenuItem<int>(
                   value: 15,
                   child: Text('15 minutes'),
                 ),
-                const DropdownMenuItem<int>(
+                DropdownMenuItem<int>(
                   value: 30,
                   child: Text('30 minutes'),
                 ),
-                const DropdownMenuItem<int>(
+                DropdownMenuItem<int>(
                   value: 60,
                   child: Text('1 hour'),
                 ),
-                const DropdownMenuItem<int>(
+                DropdownMenuItem<int>(
                   value: 90,
                   child: Text('1 hour 30 minutes'),
                 ),
-                const DropdownMenuItem<int>(
+                DropdownMenuItem<int>(
                   value: 120,
                   child: Text('2 hours'),
                 ),

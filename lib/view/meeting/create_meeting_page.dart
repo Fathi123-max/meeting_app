@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
+import 'package:get/get.dart';
+import 'package:quran_lang_test/controller/firbase_meeting_controller.dart';
 
 import '../../model/meeting_model.dart';
 
@@ -17,6 +19,8 @@ class _CreateMeetingScreenState extends State<CreateMeetingScreen> {
   DateTime _dateTime = DateTime.now();
   int _duration = 30;
   List<String> _attendees = [];
+  final MeetingController meetingService =
+      Get.put<MeetingController>(MeetingController());
 
   void _showDateTimePicker() {
     DatePicker.showDateTimePicker(
@@ -53,16 +57,18 @@ class _CreateMeetingScreenState extends State<CreateMeetingScreen> {
             bottom: 70.0,
             right: 20.0,
             child: FloatingActionButton(
-              onPressed: () {
+              onPressed: () async {
                 final meeting = Meeting(
                   title: _titleController.text,
                   dateTime: _dateTime,
                   duration: _duration,
                   attendees: _attendees,
                   agenda: _agendaController.text,
-                  id: '',
+                  id: _dateTime.toString(),
                 );
                 // TODO: Save the meeting to the database or send it to the server.
+                await meetingService.addMeeting(meeting);
+
                 // Navigator.pop(context, meeting);
               },
               child: Icon(Icons.add),

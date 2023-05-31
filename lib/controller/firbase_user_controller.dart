@@ -5,6 +5,13 @@ import '../model/user_model.dart';
 
 class UserController extends GetxController {
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final RxList<User> _user = <User>[].obs;
+  RxList<User> get user => _user;
+  @override
+  void onInit() {
+    getAllUsers();
+    super.onInit();
+  }
 
   Future<List<User>> getAllUsers() async {
     final QuerySnapshot snapshot = await firestore.collection('users').get();
