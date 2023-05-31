@@ -4,9 +4,9 @@ import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_not
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../constatnts/const.dart';
-import '../view/home_page.dart';
-import '../view/meetings_view_page.dart';
+import '../../constatnts/const.dart';
+import '../home/home_page.dart';
+import '../meeting/meetings_view_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);

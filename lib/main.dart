@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:quran_lang_test/test/buttonnavbar.dart';
+import 'package:quran_lang_test/view/widgets/buttonnavbar.dart';
 
 void main() {
   runApp(const MyApp());

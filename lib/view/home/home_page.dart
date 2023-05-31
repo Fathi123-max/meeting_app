@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quran_lang_test/constatnts/const.dart';
-import 'package:quran_lang_test/view/user_screen.dart';
+import 'package:quran_lang_test/view/user/user_screen_page.dart';
 
 class UsersList extends GetView {
   UsersList({super.key});

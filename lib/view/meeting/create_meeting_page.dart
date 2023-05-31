@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 
-import '../model/meeting_model.dart';
+import '../../model/meeting_model.dart';
 
 class CreateMeetingScreen extends StatefulWidget {
   const CreateMeetingScreen({Key? key}) : super(key: key);

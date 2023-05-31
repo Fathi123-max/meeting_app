@@ -3,8 +3,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:intl/intl.dart';
 import 'package:quran_lang_test/model/meeting_model.dart';
-import 'package:quran_lang_test/test.dart';
-import 'package:quran_lang_test/view/search_page.dart';
+import 'package:quran_lang_test/view/meeting/create_meeting_page.dart';
+import 'package:quran_lang_test/view/meeting/update_meeting_page.dart';
 
 class MeetingsScreen extends StatefulWidget {
   final List<Meeting> meetings;

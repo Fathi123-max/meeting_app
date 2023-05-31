@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'model/meeting_model.dart';
+import '../../model/meeting_model.dart';
 
 class UpdateMeetingScreen extends StatefulWidget {
   final Meeting meeting;
